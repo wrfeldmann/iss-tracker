@@ -61,6 +61,7 @@ class ISSTracker():
         column_widths[7] = 7
         print("")
         heading_printed = False
+        lights_utils.red_white_blue_blink(50, 0.2)
         while True:
             now = datetime.now().astimezone()
             display_now = now.strftime("%Y-%m-%d %H:%M:%S %Z")
@@ -91,13 +92,17 @@ class ISSTracker():
             if platform.system() != "Darwin":
                 if is_near:
                     if is_visible:
-                        lights_utils.chase(colors.green, 60, 0.1)
+                        #lights_utils.chase(colors.green, 60, 0.1)
+                        lights_utils.fill(colors.green, 60, 0.1)
                     else:
-                        lights_utils.chase(colors.blue, 60, 0.1)
+                        #lights_utils.chase(colors.blue, 60, 0.1)
+                        lights_utils.fill(colors.blue, 60, 0.1)
                 else:
-                    time.sleep(60)
+                    lights_utils.fill(colors.black, 1, 0.1)
+                    time.sleep(30)
             else:
-                time.sleep(60)
+                lights_utils.fill(colors.black, 1, 0.1)
+                time.sleep(30)
         print("")
 
 

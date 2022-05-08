@@ -8,8 +8,8 @@ class ISSUtils():
     def near_ISS(self, args, iss_latitude, iss_longitude):
         message = ""
         true_false = False
-        if args.latitude - 5 <= iss_latitude <= args.latitude + 5 and \
-                args.longitude - 5 <= iss_longitude <= args.longitude + 5:
+        if args.latitude - 12.5 <= iss_latitude <= args.latitude + 12.5 and \
+                args.longitude - 12.5 <= iss_longitude <= args.longitude + 12.5:
             message = "Overhead"
             true_false = True
         return true_false, message
@@ -26,10 +26,10 @@ class ISSUtils():
         return iss_latitude, iss_longitude
 
     def get_latitude_longitude_ranges(self, args):
-        start_latitude = args.latitude - 5
-        end_latitude = args.latitude + 5
-        start_longitude = args.longitude - 5
-        end_longitude = args.longitude + 5
+        start_latitude = args.latitude - 12.5
+        end_latitude = args.latitude + 12.5
+        start_longitude = args.longitude - 12.5
+        end_longitude = args.longitude + 12.5
         return start_latitude, end_latitude, start_longitude, end_longitude
 
     def get_latitude_longitude_messages(self, args, iss_latitude, iss_longitude):

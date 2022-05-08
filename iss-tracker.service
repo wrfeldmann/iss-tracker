@@ -1,0 +1,14 @@
+[Unit]
+Description=ISS Tracker
+After=network.target
+
+[Service]
+ExecStart=/home/pi/Documents/Software_Development/git/iss-tracker
+WorkingDirectory=/home/pi/Documents/Software_Development/git/iss-tracker
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
