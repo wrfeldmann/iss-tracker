@@ -27,6 +27,7 @@ class SunriseSunsetUtils():
             sunrise_timestamp = 0
             sunset_timestamp = 0
             astronomical_twilight_end_timestamp = 0
+            true_false = False
         timezone_offset = float(now.isoformat().split("T")[1][-6:].replace(":", "."))
         time_now = date_utils.getTimestamp(now.isoformat())
         astronomical_twilight_begin_timestamp = astronomical_twilight_begin_timestamp + (timezone_offset * 3600)
