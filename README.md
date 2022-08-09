@@ -26,3 +26,11 @@ To run the ISS tracker requires 2 command line parameters
 `./iss-tracker.py --latitude <latitude of your location as a float> --longitude <longitude of your location as a float>`
 
 "Close by" is defined as latitude + and - 5 and the longitude + and - 5.
+
+Installation of iss-tracker.service file on raspberry pi:
+
+sudo su -
+copy the iss-tracker.service file to /etc/systemd/system/iss-tracker.service
+systemctl enable iss-tracker.service
+systemctl daeemon-reload
+systemctl status iss-tracker.service

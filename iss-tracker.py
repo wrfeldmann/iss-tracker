@@ -69,8 +69,6 @@ class ISSTracker():
                             action="store",
                             type=float,
                             default=1500.0)
-        parser.add_argument("--nolights",
-                            help="[OPTIONAL] Determines if the lights are connected and should be turned on or not")
         self.args = parser.parse_args()
 
     def track_iss(self):
